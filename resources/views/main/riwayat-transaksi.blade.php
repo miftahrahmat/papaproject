@@ -16,37 +16,36 @@
     </a>
 </div>
 <div class="container mb-12">
-    <div class="-mx-4">
         <div class="relative px-2">
-@if($pending)
-<div class="mx-auto mt-3 hidden w-full items-center rounded-lg bg-warning-100 px-4 py-5 text-base text-warning-800 data-[te-alert-show]:inline-flex"
-  role="alert" data-te-alert-init data-te-alert-show>
-  <a href="{{ url('/akun/riwayat/transaksi', $pending->order_id) }}">
-   <div class="flex justify-between cursor-pointer">
-        <div class="flex-1">
-            <div class="text-xs mb-2">
-                <span class="inline-block whitespace-nowrap rounded-[0.27rem] bg-info-100 px-[1em] pb-[1em] pt-[1em] text-center align-baseline text-[1em] font-bold leading-none text-info-800 uppercase">Menunggu Pembayaran</span>
+            @if($pending)
+            <div class="mx-auto mt-3 hidden w-full items-center rounded-lg bg-warning-100 px-4 py-5 text-base text-warning-800 data-[te-alert-show]:inline-flex"
+              role="alert" data-te-alert-init data-te-alert-show>
+                <a href="{{ url('/akun/riwayat/transaksi', $pending->order_id) }}">
+                   <div class="flex justify-between cursor-pointer">
+                        <div class="flex-1">
+                            <div class="text-xs mb-2">
+                                <span class="inline-block whitespace-nowrap rounded-[0.27rem] bg-info-100 px-[1em] pb-[1em] pt-[1em] text-center align-baseline text-[1em] font-bold leading-none text-info-800 uppercase">Menunggu Pembayaran</span>
+                            </div>
+                            <div class="mb-2 text-sm">
+                                <span class="font-semibold text-gray-900 hover:text-gray-600">Pembelian Layanan {{ $pending->layanan }}</span>
+                            </div>
+                        </div>
+                   </div>
+               </a>
+              <button type="button" class="ml-auto -mt-10 box-content rounded-none border-none p-1 text-warning-900 opacity-50 hover:text-warning-900 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                data-te-alert-dismiss aria-label="Close">
+                <span class="w-[1em] focus:opacity-100 disabled:pointer-events-none disabled:select-none disabled:opacity-25 [&.disabled]:pointer-events-none [&.disabled]:select-none [&.disabled]:opacity-25">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+                    <path fill-rule="evenodd"
+                      d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </span>
+              </button>
             </div>
-            <div class="mb-2 text-sm">
-                <span class="font-semibold text-gray-900 hover:text-gray-600">Pembelian Layanan {{ $pending->layanan }}</span>
-            </div>
-        </div>
-   </div>
-   </a>
-  <button type="button" class="ml-auto -mt-10 box-content rounded-none border-none p-1 text-warning-900 opacity-50 hover:text-warning-900 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
-    data-te-alert-dismiss aria-label="Close">
-    <span class="w-[1em] focus:opacity-100 disabled:pointer-events-none disabled:select-none disabled:opacity-25 [&.disabled]:pointer-events-none [&.disabled]:select-none [&.disabled]:opacity-25">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
-        <path fill-rule="evenodd"
-          d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-          clip-rule="evenodd" />
-      </svg>
-    </span>
-  </button>
-</div>
-@endif
+            @endif
 
-<div class="bg-white min-h-screen">
+<div class="bg-white">
     <div class="pb-[35px]">
         <div class="pt-2">
            <!--Pills navigation-->
@@ -189,7 +188,6 @@ data-te-nav-ref>
 </div>
         </div>
     </div>
-</div>
 </div>
 </div>
 </div>

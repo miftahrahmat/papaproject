@@ -2,23 +2,23 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts --><link
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
-  rel="stylesheet" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
     <!-- Scripts -->
     @vite('resources/css/app.css')
     @vite('resources/sass/app.scss')
     @vite('resources/js/app.js')
     @yield('css')
-    <style type="text/css">
-        body.preloader-site {
+<style type="text/css">
+.preloader-site {
     overflow: hidden;
 }
 
@@ -40,10 +40,9 @@
     transform: translate(-50%, -50%);
     width: 120px;
 }
-    </style>
-</script>
+</style>
 </head>
-<body class="">
+<body class="pre preloader-site">
     <div class="preloader-wrapper">
         <div class="preloader">
             <img src="{{ asset('/assets/dog.gif') }}" width="100px" alt="Loading...">
@@ -67,7 +66,7 @@
         <!-- <section id="bottom-navigation" class="md:hidden block fixed inset-x-0 bottom-0 z-10 bg-white shadow"> // if shown only tablet/mobile-->
           <section id="bottom-navigation" class="block bg-white max-w-[460px] mx-auto fixed inset-x-0 bottom-0 z-10 shadow">
             <div id="tabs" class="flex justify-between border-t-2 border-sky-300">
-                <a href="{{ url('/') }}" class="w-1/2 text-slate-700 focus:text-sky-700 hover:text-sky-700 justify-center inline-block text-center pt-2 pb-1">
+                <a href="{{ route('home') }}" class="w-1/2 text-slate-700 focus:text-sky-700 hover:text-sky-700 justify-center inline-block text-center pt-2 pb-1">
                     <i class="fa-solid fa-home fa-lg"></i>
                     <span class="tab tab-home block text-xs">Beranda</span>
                 </a>
@@ -105,41 +104,41 @@
     </main>
 
     <!-- Footer -->
-<footer class="max-w-[460px] mx-auto bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200">
+    <footer class="max-w-[460px] mx-auto bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200">
 
     <!-- Social media -->
     <div class="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
-    <div class="mr-12 hidden md:block">
-      <span>Hubungi Kami Disini :</span>
+        <div class="mr-12 hidden md:block">
+          <span>Hubungi Kami Disini :</span>
+        </div>
+        <div class="flex justify-center items-center">
+          <a href="#" class="mr-6 text-neutral-600 dark:text-neutral-200">
+            <i class="fa-brands fa-whatsapp fa-lg"></i>
+          </a>
+          <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
+            <i class="fa-brands fa-facebook fa-lg"></i>
+          </a>
+          
+          
+          <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
+            <i class="fa-brands fa-instagram fa-lg"></i>
+          </a>
+          
+        </div>
     </div>
-    <div class="flex justify-center items-center">
-      <a href="#" class="mr-6 text-neutral-600 dark:text-neutral-200">
-        <i class="fa-brands fa-whatsapp fa-lg"></i>
-      </a>
-      <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
-        <i class="fa-brands fa-facebook fa-lg"></i>
-      </a>
-      
-      
-      <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
-        <i class="fa-brands fa-instagram fa-lg"></i>
-      </a>
-      
-    </div>
-  </div>
   
     <!-- Main container -->
     <div class="mx-6 pt-8 pb-4 text-center">
   
-    <!-- Text -->
-    <div class="mb-6">
-    <h5 class="mb-2 font-bold uppercase">PT. Papa Official Store</h5>
-  
-    <p class="mb-4">
-      Embark on an adventure of a lifetime and uncover hidden
-      wonders. Your journey begins now!
-    </p>
-  </div>
+        <!-- Text -->
+        <div class="mb-6">
+            <h5 class="mb-2 font-bold uppercase">PT. Papa Official Store</h5>
+          
+            <p class="mb-4">
+              Embark on an adventure of a lifetime and uncover hidden
+              wonders. Your journey begins now!
+            </p>
+        </div>
   
     </div>
   
@@ -150,7 +149,7 @@
   
         <a
           class="font-semibold text-neutral-600 dark:text-neutral-400 ml-2"
-          href="https://tw-elements.com/"
+          href="https://digital.papaofficialstore.com/"
         >
           Papa Official Store
         </a>
@@ -182,13 +181,9 @@ $(document).ready(function() {
     $("#tag").trigger("scroll");
 });
 
-$(document).ready(function($) {
-    var Body = $('body');
-    Body.addClass('preloader-site');
-});
 $(window).on("load",function(){
           $(".preloader-wrapper").fadeOut(2000);
-          $('body').removeClass('preloader-site');
+          $(".pre").removeClass("preloader-site");
         });
 
 </script>
@@ -250,6 +245,7 @@ $(window).on("load",function(){
   document.body.appendChild(css);
   };
 </script>
+@yield('js')
 
 </body>
 </html>

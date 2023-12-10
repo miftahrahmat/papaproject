@@ -33,7 +33,7 @@
 @endsection
 @section('content')
 <div class="px-4 py-3 z-50 sticky top-0 bg-sky-500 text-white">
-    <a href="{{ url('/home') }}">
+    <a href="{{ route('home') }}">
     <div class="container px-0 flex items-center">
         <button class="mr-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
@@ -42,12 +42,17 @@
     </div>
     </a>
 </div>
-<section class="py-4 relative overflow-hidden min-h-screen mb-20 scroll-smooth">
+<section class="py-4 relative overflow-hidden scroll-smooth">
     <div class="px-4 flex justify-items-center mb-4 ">
         <div class=" w-full">
             <label for="user_id" class="block text-xs font-medium pb-2">Nomor Ponsel</label>
             <input maxlength="13" class="relative block w-full appearance-none border-slate-600 bg-slate-700 px-3 py-2 text-xs text-white placeholder-slate-400 focus:z-10 focus:border-primary-500 focus:outline-none focus:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-75 !rounded-md !border-0 !bg-murky-200 !text-murky-800 !placeholder-murky-800 accent-murky-800 !ring-0 placeholder:text-xs focus:!border-transparent focus:bg-slate-600 focus:!ring-transparent" type="number" id="nomor" name="target" min="0" placeholder="08xxxxx">
         </div>
+    </div>
+    <div class="infoorder mx-4 px-3 py-4 bg-slate-200 rounded my-6">
+        <p class="text-sm text-center">
+            <strong>Silahkan masukan nomor ponsel terlebih dahulu.</strong>
+        </p>
     </div>
     <div class="mb-6">
         <div class="flex-1 px-4 mb-2">
@@ -261,6 +266,7 @@ $("#nomor").change(function() {
     var target = $("input[name='target']").val();
     
     if (target) {
+        $(".infoorder").hide();
         $.ajax({
             url: "<?php echo route('ajax.cek.nomor.ppob') ?>",
             dataType: "json",
@@ -412,7 +418,7 @@ $("#nomor").change(function() {
                                         color: '#fff'
                                     });
                                     window.location = `/riwayat/transaksi/${resOrder.order_id}`;
-                                } else {
+                                }else {
                                     Swal.fire({
                                         title: 'Oops...',
                                         width: 400,

@@ -132,7 +132,7 @@ class OrderPpobController extends Controller
         {
             $amount = $dataLayanan->harga + $rand;
             
-            if($request->pembayaran == "OVO"){
+            if($request->pembayaran == "OVO" || $request->pembayaran == "DANA"){
                 
                 $no_pembayaran = $cekpay->nomor;
                 

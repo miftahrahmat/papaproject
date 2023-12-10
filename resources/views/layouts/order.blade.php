@@ -20,7 +20,7 @@
 </script>
 </head>
 <body class="max-w-[460px] mx-auto">
-    <main class="min-h-screen">
+    <main class="">
         @yield('content')
     </main>
     @yield('js')

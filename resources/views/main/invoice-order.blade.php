@@ -16,12 +16,12 @@
     </div>
     </a>
     @else
-    <a href="{{ url('/home') }}">
+    <a href="{{ route('home') }}">
     <div class="container px-0 flex items-center">
         <button class="mr-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
         </button>
-        <h2 class="flex-1 truncate font-bold">Riwayat Transaksi</h2>
+        <h2 class="flex-1 truncate font-bold">Beranda</h2>
     </div>
     </a>
     @endif

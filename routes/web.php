@@ -15,8 +15,7 @@ use App\Http\Controllers\Auth\LoginRegisterController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('', [App\Http\Controllers\IndexController::class, 'index']);
-Route::get('/home', [App\Http\Controllers\IndexController::class, 'index'])->name('home');
+Route::get('', [App\Http\Controllers\IndexController::class, 'index'])->name('home');
 
 Route::get('/produk/{slug}/{pid}', [App\Http\Controllers\IndexController::class, 'detail'])->name('main.produk.detail');
 Route::get('/search', [App\Http\Controllers\IndexController::class, 'search'])->name('search');
@@ -32,10 +31,10 @@ Route::get('/riwayat/transaksi/{oid}', [App\Http\Controllers\InvoiceController::
 
 //Order PPOB
 Route::get('/order/ppob', [App\Http\Controllers\OrderPpobController::class, 'index'])->name('ppob');
-Route::post('/order/ppob/cek', [App\Http\Controllers\OrderPpobController::class, 'cek_layanan'])->name('ajax.cek.nomor.ppob');
-Route::post('/order/ppob/detail', [App\Http\Controllers\OrderPpobController::class, 'detail'])->name('ajax.detail.pesanan');
-Route::post('/order/ppob/pay', [App\Http\Controllers\OrderPpobController::class, 'pembayaran'])->name('validasi.pembayaran.ppob');
-Route::post('/order/ppob/pembelian', [App\Http\Controllers\OrderPpobController::class, 'order'])->name('order.ppob');
+Route::post('/cek/layanan/ppob', [App\Http\Controllers\OrderPpobController::class, 'cek_layanan'])->name('ajax.cek.nomor.ppob');
+Route::post('/detail/order/ppob', [App\Http\Controllers\OrderPpobController::class, 'detail'])->name('ajax.detail.pesanan');
+Route::post('/validasi/pay/ppob', [App\Http\Controllers\OrderPpobController::class, 'pembayaran'])->name('validasi.pembayaran.ppob');
+Route::post('/post/pembelian/ppob', [App\Http\Controllers\OrderPpobController::class, 'order'])->name('order.ppob');
 
 Route::controller(GoogleController::class)->group(function(){
     Route::get('auth/google', 'redirectToGoogle')->name('auth.google');

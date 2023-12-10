@@ -6,20 +6,19 @@
 @endsection
 @section('content')
 <div class="px-4 py-3 z-50 sticky top-0 bg-sky-500 text-white">
-    <a href="{{ url('/home') }}">
+    <a href="{{ route('home') }}">
     <div class="container px-0 flex items-center">
         <button class="mr-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
         </button>
-        <h2 class="flex-1 truncate font-bold">Kotak Masuk</h2>
+        <h2 class="flex-1 truncate font-bold">Beranda</h2>
     </div>
     </a>
 </div>
 
 <div class="container mb-12">
-    <div class="-mx-4">
         <div class="relative px-2">
-<div class="bg-white min-h-screen">
+<div class="bg-whiten">
     <div class="pb-[65px]">
         <div class="pt-2">
            <!--Pills navigation-->
@@ -163,7 +162,6 @@ data-te-nav-ref>
 </div>
         </div>
     </div>
-</div>
 </div>
 </div>
 </div>
