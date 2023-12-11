@@ -13,16 +13,14 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
     <!-- Scripts -->
-    @vite('resources/css/app.css')
-    @vite('resources/sass/app.scss')
-    @vite('resources/js/app.js')
+    @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
     @yield('css')
 <style type="text/css">
-.preloader-site {
+.preloading-site {
     overflow: hidden;
 }
 
-.preloader-wrapper {
+.preloading-wrapper {
     height: 100%;
     width: 100%;
     background: #FFF;
@@ -32,7 +30,7 @@
     z-index: 9999999;
 }
 
-.preloader-wrapper .preloader {
+.preloading-wrapper .preloading {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -42,9 +40,9 @@
 }
 </style>
 </head>
-<body class="pre preloader-site">
-    <div class="preloader-wrapper">
-        <div class="preloader">
+<body class="pre preloading-site">
+    <div class="preloading-wrapper">
+        <div class="preloading">
             <img src="{{ asset('/assets/dog.gif') }}" width="100px" alt="Loading...">
             <span class="pt-3 font-semibold ml-3">Loading....</span>
         </div>
@@ -182,8 +180,8 @@ $(document).ready(function() {
 });
 
 $(window).on("load",function(){
-          $(".preloader-wrapper").fadeOut(2000);
-          $(".pre").removeClass("preloader-site");
+          $(".preloading-wrapper").fadeOut(2000);
+          $(".pre").removeClass("preloading-site");
         });
 
 </script>
